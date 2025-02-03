@@ -1,5 +1,7 @@
+import {config} from "./config.js";
+
 // Configuration for Google Sheets API
-const API_KEY = 'AIzaSyAP8XiDKpddoWglaALIIVHe9weV7xauVvE'; // Get this from Google Cloud Console
+const API_KEY = config.API_KEY;
 const InteralARsheetID = "1xRNrchxKEYEoeRGNYiC9t0IW24mKpFg-FrdfpylHYSU"
 
 
