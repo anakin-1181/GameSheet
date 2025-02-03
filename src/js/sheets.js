@@ -3,7 +3,7 @@ import {config} from "./config.js";
 // Configuration for Google Sheets API
 const API_KEY = config.API_KEY;
 const InteralARsheetID = config.internalARsheetID;
-
+const discoveryDocs = config.discoveryDocs;
 
 
 class SheetsAPI {
@@ -22,7 +22,7 @@ class SheetsAPI {
 
             await gapi.client.init({
                 apiKey: API_KEY,
-                discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4']
+                discoveryDocs: discoveryDocs
             });
 
             this.isInitialized = true;
