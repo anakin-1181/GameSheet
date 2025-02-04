@@ -1,3 +1,11 @@
+h1 {
+    position: relative;
+    top: -10px; /* Moves it slightly upwards */
+    text-align: center;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -5,22 +13,26 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 .table-container {
-    width: 80%;
-    overflow-y: auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    width: 100%;
+
+
+    border-radius: 1px;
+
+    padding: 1px;
 }
 
+
 table {
-    width: 100%;
-    border-collapse: collapse;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    width: 45%;
+    border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
+    margin: auto;
 }
 
 thead {
@@ -30,14 +42,15 @@ thead {
 }
 
 th, td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
+    padding: 10px 10px;
+    border: 1px solid #000000;
+    /*background-color: #eddddd;*/
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f3f3f3;
+tr:nth-child(odd) {
+    background-color: #eddddd;
 }
 
 tbody tr:hover {
-    background-color: #e0e0ff;
+    background-color: #2222c1;
 }
