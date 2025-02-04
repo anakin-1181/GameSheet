@@ -4,17 +4,30 @@ const sheets = new SheetsAPI();
 
 async function sortedData(){
     try {
-        const data = await sheets.readSheet();
+        const data = await fData();
         return data.sort((a, b) => Number(b[1]) - Number(a[1]))
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
+async function fData() {
+    try {
+        let data = await sheets.readSheet();
+        data.forEach((arr)=>{
+            arr[1] = parseInt(arr[1])
+        })
+        return data
+    }
+    catch (e){
+        console.log(e)
+    }
+}
+
 async function create_table(){
     try{
         await sheets.initialize();
-        const data = await sheets.readSheet();
+        const data = await fData();
 
         const table = document.getElementById("t1")
         if (!table){
