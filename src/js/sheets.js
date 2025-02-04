@@ -42,7 +42,7 @@ class SheetsAPI {
         try {
             const response = await gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: SHEET_ID,
-                range: "Ranking!A1:B10",
+                range: "Ranking!A1:B11",
             });
 
             return response.result.values;
