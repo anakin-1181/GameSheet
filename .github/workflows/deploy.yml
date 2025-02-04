@@ -18,7 +18,7 @@ jobs:
           echo "js dir:"
           ls src/js
           echo "file content:"
-          cat src/js/config.js
+          cat src/js/config2.js
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
