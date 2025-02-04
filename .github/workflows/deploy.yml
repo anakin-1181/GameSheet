@@ -11,7 +11,7 @@ jobs:
         run: |
           echo "const config = { 
             API_KEY: '${{ secrets.API_KEY }}',
-            internalARsheetID: '${{ secrets.internalARsheetID }}'
+            internalARsheetID: '${{ secrets.INTERNALARSHEETID }}'
           };" > config.js
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
