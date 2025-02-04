@@ -2,7 +2,7 @@ import {config} from "./config.js";
 
 // Configuration for Google Sheets API
 const API_KEY = config.API_KEY;
-const InternalARsheetID = config.internalARsheetID;
+const SHEET_ID = config.SHEET_ID;
 const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
 
@@ -41,7 +41,7 @@ class SheetsAPI {
 
         try {
             const response = await gapi.client.sheets.spreadsheets.values.get({
-                spreadsheetId: InternalARsheetID,
+                spreadsheetId: SHEET_ID,
                 range: "Ranking!A1:B10",
             });
 

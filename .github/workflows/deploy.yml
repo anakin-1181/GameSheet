@@ -8,13 +8,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Generate config
         run: |
           echo "export const config = { 
             API_KEY: '${{ secrets.API_KEY }}',
             internalARsheetID: '${{ secrets.INTERNALARSHEETID }}'
           };" > src/js/config.js
+          echo "js dir:"
+          ls src/js
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
