@@ -4,12 +4,21 @@ h1 {
     text-align: center;
 }
 
+@media (max-width: 600px) {
+    table {
+        width: 100%; /* Make the table 100% of the screen width on small screens */
+        margin: 0; /* Remove margins to ensure it fits better */
+    }
 
+    .table-container {
+        padding: 0; /* Remove padding for better use of space */
+    }
+}
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -19,7 +28,7 @@ body {
 .table-container {
     width: 100%;
 
-
+    overflow-x: auto;
     border-radius: 1px;
 
     padding: 1px;
