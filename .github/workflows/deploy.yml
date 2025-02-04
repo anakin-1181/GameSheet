@@ -14,7 +14,7 @@ jobs:
           echo "export const config = { 
             API_KEY: '${{ secrets.API_KEY }}',
             SHEET_ID: '${{ secrets.SHEET_ID }}'
-          };" > src/js/config.js
+          };" > src/js/config2.js
           echo "js dir:"
           ls src/js
           echo "file content:"
