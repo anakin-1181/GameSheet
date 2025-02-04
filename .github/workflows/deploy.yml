@@ -11,10 +11,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Generate config
         run: |
-          echo "const config = { 
+          echo "export const config = { 
             API_KEY: '${{ secrets.API_KEY }}',
             internalARsheetID: '${{ secrets.INTERNALARSHEETID }}'
-          }; export default config;" > ./src/js/config.js
+          };" > src/js/config.js
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
