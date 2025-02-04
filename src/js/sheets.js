@@ -2,8 +2,9 @@ import {config} from "./config.js";
 
 // Configuration for Google Sheets API
 const API_KEY = config.API_KEY;
-const InteralARsheetID = config.internalARsheetID;
+const InternalARsheetID = config.internalARsheetID;
 const discoveryDocs = config.discoveryDocs;
+const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
 
 class SheetsAPI {
@@ -12,6 +13,13 @@ class SheetsAPI {
     }
 
     async initialize() {
+
+        if (typeof gapi === 'undefined') {
+            await new Promise((resolve) => {
+                window.addEventListener('gapiLoaded', resolve, { once: true });
+            });
+        }
+
         try {
             await new Promise((resolve, reject) => {
                 gapi.load('client', {
@@ -22,7 +30,8 @@ class SheetsAPI {
 
             await gapi.client.init({
                 apiKey: API_KEY,
-                discoveryDocs: discoveryDocs
+                discoveryDocs: [discoveryDocs],
+                scope: SCOPE
             });
 
             this.isInitialized = true;
@@ -39,7 +48,7 @@ class SheetsAPI {
 
         try {
             const response = await gapi.client.sheets.spreadsheets.values.get({
-                spreadsheetId: InteralARsheetID,
+                spreadsheetId: InternalARsheetID,
                 range: "Ranking!A1:B10",
             });
 

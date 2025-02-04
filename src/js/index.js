@@ -2,15 +2,15 @@ import SheetsAPI from './sheets.js';
 
 const sheets = new SheetsAPI();
 
-async function sortedData(){
-    try {
-        const data = await getSheetData();
-        const sorted_data = data.sort((a,b)=>Number(b[1]) - Number(a[1]));
-        return sorted_data
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
+// async function sortedData(){
+//     try {
+//         const data = await getSheetData();
+//         const sorted_data = data.sort((a,b)=>Number(b[1]) - Number(a[1]));
+//         return sorted_data
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
 
 async function create_table(){
     try{

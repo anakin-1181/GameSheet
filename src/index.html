@@ -9,8 +9,15 @@
 
 <body>
     <h1 style="text-align: center">LeaderBoard</h1>
-    <table style="margin: 0 auto" id="t1">
-        <script src="https://apis.google.com/js/api.js"></script>
+    <table style="margin: 0 auto" id="t1"></table>
+        <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script>
+        // This ensures GAPI is loaded before your modules
+        function gapiLoaded() {
+            // Dispatch an event when GAPI is loaded
+            window.dispatchEvent(new Event('gapiLoaded'));
+        }
+    </script>
     <script type="module" src="js/sheets.js"></script>
     <script type="module" src="js/index.js"></script>
 </body>
