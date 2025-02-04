@@ -52,5 +52,12 @@ class SheetsAPI {
         }
     }
 }
-
+window.addEventListener('error', function(e) {
+    console.log('sheets Resource failed to load:', {
+        src: e.target.src,
+        type: e.target.tagName,
+        time: new Date().toISOString()
+    });
+});
 export default SheetsAPI;
+
