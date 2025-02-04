@@ -14,12 +14,6 @@ class SheetsAPI {
 
     async initialize() {
 
-        if (typeof gapi === 'undefined') {
-            await new Promise((resolve) => {
-                window.addEventListener('gapiLoaded', resolve, { once: true });
-            });
-        }
-
         try {
             await new Promise((resolve, reject) => {
                 gapi.load('client', {
