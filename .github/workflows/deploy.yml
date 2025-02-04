@@ -1,0 +1,20 @@
+name: Deploy
+on:
+  push:
+    branches: [ feat/website ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate config
+        run: |
+          echo "const config = { 
+            API_KEY: '${{ secrets.API_KEY }}',
+            internalARsheetID: '${{ secrets.internalARsheetID }}'
+          };" > config.js
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .

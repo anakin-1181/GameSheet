@@ -3,7 +3,6 @@ import {config} from "./config.js";
 // Configuration for Google Sheets API
 const API_KEY = config.API_KEY;
 const InternalARsheetID = config.internalARsheetID;
-const discoveryDocs = config.discoveryDocs;
 const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 
 
@@ -24,7 +23,7 @@ class SheetsAPI {
 
             await gapi.client.init({
                 apiKey: API_KEY,
-                discoveryDocs: [discoveryDocs],
+                discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
                 scope: SCOPE
             });
 
