@@ -15,7 +15,7 @@ async function fData() {
     try {
         let data = await sheets.readSheet();
         data.forEach((arr)=>{
-            arr[1] = parseInt(arr[1])
+            arr[1] = Math.ceil(arr[1])
         })
         return data
     }
