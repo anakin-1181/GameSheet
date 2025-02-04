@@ -15,7 +15,11 @@ async function fData() {
     try {
         let data = await sheets.readSheet();
         data.forEach((arr)=>{
-            arr[1] = Math.ceil(arr[1])
+            if (arr[1] === "Score"){
+            }
+            else {
+                arr[1] = Math.ceil(arr[1])
+            }
         })
         return data
     }
