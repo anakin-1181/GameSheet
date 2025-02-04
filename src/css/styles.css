@@ -24,7 +24,7 @@ body {
 }
 
 .table-container {
-    width: 100%;
+    width: 70%;
     min-width: 0;
     overflow-x: auto;
     border-radius: 1px;
@@ -35,7 +35,7 @@ body {
 
 table {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 45%;
+    width: 30%;
     border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
