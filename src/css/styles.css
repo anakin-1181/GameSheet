@@ -26,13 +26,14 @@ h1 {
 }
 
 table {
-    width: 30%;
+    width: 30% !important;
     margin: auto;
     border-collapse: separate;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background: white;
+    table-layout: fixed;
+    overflow-wrap: break-word;
 }
 
 th, td {
@@ -40,6 +41,10 @@ th, td {
     text-align: left;
     border: 1px solid #e0e0e0;
     font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 1px;
 }
 
 th {
