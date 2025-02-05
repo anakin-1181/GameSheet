@@ -63,14 +63,20 @@
 /*}*/
 
 @media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        height: auto;
+    }
+
     .table-container {
-        width: 95%;
-        padding: 5px;
+        width: 100%;
+        overflow-x: auto;
     }
 
     table {
         width: 100%;
         font-size: 14px;
+        min-width: 300px;
     }
 
     th, td {
