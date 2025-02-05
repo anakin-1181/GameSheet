@@ -58,18 +58,12 @@ async function create_table(){
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         await create_table();
+        console.log("The table has been created")
+        alert("Table has been created")
     }
     catch (error){
         console.log(error)
     }
 
-});
-
-window.addEventListener('error', function(e) {
-    console.log('index Resource failed to load:', {
-        src: e.target.src,
-        type: e.target.tagName,
-        time: new Date().toISOString()
-    });
 });
 
