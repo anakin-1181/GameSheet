@@ -69,8 +69,7 @@
     }
 
     .table-container {
-        width: 100%;
-        overflow-x: auto;
+        width: 95%;
     }
 
     table {
@@ -81,6 +80,8 @@
 
     th, td {
         padding: 8px 5px;
+        font-size: 14px;
+        white-space: nowrap;
     }
 }
 
@@ -110,22 +111,22 @@ body {
 }
 
 .table-container {
-    width: 70%;
-
-
-    border-radius: 1px;
-
-    padding: 1px;
+    width: 90%;
+    margin: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 
 table {
+    width: 100%; /* Make table responsive */
+    max-width: 800px; /* Limit max width on larger screens */
+    min-width: 300px;
+    margin: auto;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 30%;
     border-collapse: separate;
     border-radius: 10px;
     overflow: hidden;
-    margin: auto;
 }
 
 thead {
