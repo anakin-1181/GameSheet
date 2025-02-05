@@ -94,14 +94,13 @@ body {
     margin: 0;
     padding: 10px;
     min-height: 100vh;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: flex-start;
 }
 
 .table-container {
-    width: 95%;
-    max-width: 355px; /* For 375px screen */
+    width: 100%;
     margin: 20px auto;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -127,6 +126,7 @@ th, td {
     text-align: left;
     border: 1px solid #e0e0e0;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 th {
