@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         await create_table();
         console.log("The table has been created")
-        alert("Table has been created")
     }
     catch (error){
         console.log(error)
