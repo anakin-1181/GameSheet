@@ -1,32 +1,112 @@
+/*h1 {*/
+/*    position: relative;*/
+/*    top: -10px; !* Moves it slightly upwards *!*/
+/*    text-align: center;*/
+/*}*/
+
+/*@media (max-width: 600px) {*/
+/*    table {*/
+/*        width: 100%; !* Make the table 100% of the screen width on small screens *!*/
+/*        margin: 0; !* Remove margins to ensure it fits better *!*/
+/*    }*/
+
+/*    .table-container {*/
+/*        padding: 0; !* Remove padding for better use of space *!*/
+/*    }*/
+/*}*/
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f8f9fa;*/
+/*    display: block;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.table-container {*/
+/*    width: 70%;*/
+/*    min-width: 0;*/
+/*    overflow-x: auto;*/
+/*    border-radius: 1px;*/
+
+/*    padding: 1px;*/
+/*}*/
+
+
+/*table {*/
+/*    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);*/
+/*    width: 30%;*/
+/*    border-collapse: separate;*/
+/*    border-radius: 10px;*/
+/*    overflow: hidden;*/
+/*    margin: auto;*/
+/*}*/
+
+/*thead {*/
+/*    background-color: #6c63ff;*/
+/*    color: white;*/
+/*    text-align: left;*/
+/*}*/
+
+/*th, td {*/
+/*    padding: 10px 10px;*/
+/*    border: 1px solid #000000;*/
+/*    !*background-color: #eddddd;*!*/
+/*}*/
+
+/*tr:nth-child(odd) {*/
+/*    background-color: #eddddd;*/
+/*}*/
+
+/*tbody tr:hover {*/
+/*    background-color: #2222c1;*/
+/*}*/
+
+@media screen and (max-width: 768px) {
+    .table-container {
+        width: 95%;
+        padding: 5px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    th, td {
+        padding: 6px 3px;
+        font-size: 12px;
+    }
+}
+
 h1 {
     position: relative;
     top: -10px; /* Moves it slightly upwards */
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    table {
-        width: 100%; /* Make the table 100% of the screen width on small screens */
-        margin: 0; /* Remove margins to ensure it fits better */
-    }
 
-    .table-container {
-        padding: 0; /* Remove padding for better use of space */
-    }
-}
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+
 }
 
 .table-container {
     width: 70%;
-    min-width: 0;
-    overflow-x: auto;
+
+
     border-radius: 1px;
 
     padding: 1px;
