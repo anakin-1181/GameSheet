@@ -57,6 +57,11 @@ async function create_table(){
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        if (typeof  gapi === "undefined") {
+            alert("gapi is not loaded")
+        } else {
+            alert("gapi is loaded successfully")
+        }
         await create_table();
         console.log("The table has been created")
     }
