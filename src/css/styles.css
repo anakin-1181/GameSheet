@@ -104,6 +104,7 @@ body {
     margin: 20px auto;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    background-color: #6c63ff;
 }
 
 h1 {
@@ -113,12 +114,13 @@ h1 {
 }
 
 table {
+    min-width: 300px;
     width: 100%;
     border-collapse: separate;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background: white;
+    background-color: antiquewhite;
 }
 
 th, td {
