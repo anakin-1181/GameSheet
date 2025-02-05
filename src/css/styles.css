@@ -1,92 +1,3 @@
-
-
-/*@media screen and (max-width: 375px) {*/
-/*    body {*/
-/*        padding: 10px;*/
-/*        height: auto;*/
-/*    }*/
-
-/*    .table-container {*/
-/*        width: 95%;*/
-/*    }*/
-
-/*    table {*/
-/*        width: 100%;*/
-/*        font-size: 14px;*/
-/*        min-width: 300px;*/
-/*    }*/
-
-/*    th, td {*/
-/*        padding: 8px 5px;*/
-/*        font-size: 14px;*/
-/*        white-space: nowrap;*/
-/*    }*/
-/*}*/
-
-/*@media screen and (max-width: 480px) {*/
-/*    th, td {*/
-/*        padding: 6px 3px;*/
-/*        font-size: 12px;*/
-/*    }*/
-/*}*/
-
-/*h1 {*/
-/*    position: relative;*/
-/*    top: -10px; !* Moves it slightly upwards *!*/
-/*    text-align: center;*/
-/*}*/
-
-
-
-/*body {*/
-/*    font-family: Arial, sans-serif;*/
-/*    background-color: #f8f9fa;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    height: 100vh;*/
-
-/*}*/
-
-/*.table-container {*/
-/*    width: 90%;*/
-/*    margin: auto;*/
-/*    overflow-x: auto;*/
-/*    -webkit-overflow-scrolling: touch;*/
-/*}*/
-
-
-/*table {*/
-/*    width: 100%; !* Make table responsive *!*/
-/*    max-width: 800px; !* Limit max width on larger screens *!*/
-/*    min-width: 300px;*/
-/*    margin: auto;*/
-/*    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);*/
-/*    border-collapse: separate;*/
-/*    border-radius: 10px;*/
-/*    overflow: hidden;*/
-/*}*/
-
-/*thead {*/
-/*    background-color: #6c63ff;*/
-/*    color: white;*/
-/*    text-align: left;*/
-/*}*/
-
-/*th, td {*/
-/*    padding: 10px 10px;*/
-/*    border: 1px solid #000000;*/
-/*    !*background-color: #eddddd;*!*/
-/*}*/
-
-/*tr:nth-child(odd) {*/
-/*    background-color: #eddddd;*/
-/*}*/
-
-/*tbody tr:hover {*/
-/*    background-color: #2222c1;*/
-/*}*/
-
 /* Base styles (mobile-first) */
 body {
     font-family: Arial, sans-serif;
@@ -94,13 +5,14 @@ body {
     margin: 0;
     padding: 10px;
     min-height: 100vh;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
 .table-container {
-    width: 100%;
+    width: 50%;
+    max-width: 355px; /* For 375px screen */
     margin: 20px auto;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -114,22 +26,20 @@ h1 {
 }
 
 table {
-    min-width: 300px;
-    margin: auto;
     width: 30%;
-    border-collapse: collapse;
+    margin: auto;
+    border-collapse: separate;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: antiquewhite;
+    background: white;
 }
 
 th, td {
-    padding: 6px 3px;
+    padding: 8px;
     text-align: left;
     border: 1px solid #e0e0e0;
     font-size: 14px;
-    white-space: nowrap;
 }
 
 th {
@@ -146,27 +56,3 @@ tr:hover {
     background-color: #e8e8e8;
 }
 
-/* Tablet and larger */
-@media screen and (min-width: 768px) {
-    .table-container {
-        width: 80%;
-        max-width: 600px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    th, td {
-        padding: 12px;
-        font-size: 16px;
-    }
-}
-
-/* Desktop */
-@media screen and (min-width: 1024px) {
-    .table-container {
-        width: 70%;
-        max-width: 800px;
-    }
-}
