@@ -1,8 +1,4 @@
-import SheetsAPI from './sheets.js';
-import {waitForGapi, create_table, fData, range} from './common.js';
-
-const sheets = new SheetsAPI;
-
+import {create_table, fData, gdata} from './common.js';
 
 async function sortedData(){
     try {
@@ -12,14 +8,32 @@ async function sortedData(){
         console.error('Error:', error);
     }
 }
+console.log("before DOM listener: ",gdata.leaderboard)
 
-document.addEventListener('DOMContentLoaded', async () => {
+// document.addEventListener('DOMContentLoaded', async () => {
+//     try {
+//         console.log("hi")
+//         let data = gdata.leaderboard;
+//         console.log(data)
+//         await create_table(data);
+//
+//     } catch (error) {
+//
+//     }
+//     console.log("leaderboard sth")
+// });
+
+async function main(){
     try {
-        const data = await fData(range.leaderboard);
-        await waitForGapi();
+        console.log("hi")
+        let data = gdata.leaderboard;
+        console.log(data)
         await create_table(data);
 
     } catch (error) {
-        console.log(error);
+
     }
-});
+    console.log("leaderboard sth")
+}
+
+await main()
