@@ -50,13 +50,16 @@ export async function getData(range) {
         }
     }
 
-    export async function create_table(data) {
+    export function create_table(data) {
         try {
 
-            const table = document.getElementById("t1")
+            let table = document.getElementById("t1")
             if (!table) {
                 throw new Error("Table element not found");
             }
+
+            table.innerHTML = "";
+
             data.forEach(row => {
                 // Each row
                 const tr = document.createElement("tr");
