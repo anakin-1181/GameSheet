@@ -1,6 +1,8 @@
 import SheetsAPI from './sheets.js';
 
 const sheets = new SheetsAPI();
+await sheets.initialize();
+
 
 export const range = {
     time: "Time!A1:B9",
@@ -36,7 +38,6 @@ export async function fData(range) {
 
 export async function create_table(data){
     try{
-        await sheets.initialize();
 
         const table = document.getElementById("t1")
         if (!table){
