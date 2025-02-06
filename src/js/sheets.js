@@ -24,7 +24,6 @@ class SheetsAPI {
             await gapi.client.init({
                 apiKey: API_KEY,
                 discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-                scope: SCOPE
             });
 
             this.isInitialized = true;

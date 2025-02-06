@@ -3,16 +3,22 @@ import SheetsAPI from './sheets.js';
 const sheets = new SheetsAPI();
 await sheets.initialize();
 
-
 export const range = {
     time: "Time!A1:B9",
     room: "Room!A1:B12",
     leaderboard: "Ranking!A1:B11"
-}
+};
+
+export const gdata = {
+    time: await getData(range.time),
+    room: await getData(range.room),
+    leaderboard: await fData((range.leaderboard))
+};
 
 export async function getData(range){
     try{
-        return await sheets.readSheet(range);
+        let data = await sheets.readSheet(range);
+        return data
     }
     catch (e){
         console.error(e);
@@ -54,6 +60,8 @@ export async function create_table(data){
             })
             table.appendChild(tr)
         });
+        console.log("table created")
+
 
     } catch (error) {
         console.error("error", error);
