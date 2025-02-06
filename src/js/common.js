@@ -62,15 +62,14 @@ export async function create_table(data){
 
 export async function waitForGapi(retries = 5) {
     while (typeof gapi === "undefined" && retries > 0) {
-        alert(`${retries} tries left`)
-        await new Promise(resolve => setTimeout(resolve, 4000)); // Wait for 2 seconds
+        await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
         retries--; // Decrease retry count
     }
 
     if (typeof gapi === "undefined") {
-        alert("gapi is not loaded")
+        alert("gapi is not loaded");
     } else {
-        console.log("Google API loaded successfully.");
+        alert("gapi loaded successfully");
     }
 }
 
