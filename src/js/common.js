@@ -1,7 +1,14 @@
 import SheetsAPI from './sheets.js';
 
-const sheets = new SheetsAPI();
-await sheets.initialize();
+try {
+    await waitForGapi()
+    const sheets = new SheetsAPI();
+    await sheets.initialize();
+}
+catch (e){
+    console.error("DOM", e)
+}
+
 
 export const range = {
     time: "Time!A1:B9",
@@ -72,6 +79,8 @@ export async function create_table(data){
 export async function waitForGapi(retries = 15) {
     while (typeof gapi === "undefined" && retries > 0) {
         await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
+        console.log(`${retries} tries left`)
+        alert(`${retries} tries left`)
         retries--; // Decrease retry count
     }
 
