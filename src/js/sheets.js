@@ -34,7 +34,7 @@ class SheetsAPI {
         }
     }
 
-    async readSheet() {
+    async readSheet(range) {
         if (!this.isInitialized) {
             await this.initialize();
         }
@@ -42,7 +42,7 @@ class SheetsAPI {
         try {
             const response = await gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: SHEET_ID,
-                range: "Ranking!A1:B11",
+                range: range,
             });
 
             return response.result.values;
