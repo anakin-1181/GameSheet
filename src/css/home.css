@@ -39,7 +39,7 @@ body {
 .gameboy-container {
     /* Center it on the page and give it a console-like size */
     margin: 0 auto;
-    margin-top: calc(50vh - 370px);
+    /*margin-top: calc(50vh - 370px);*/
     max-width: 400px;
     height: 700px;
 
@@ -62,6 +62,7 @@ body {
     border-radius: 10px;
     position: relative;
     overflow: auto;
+
 }
 
 /* Content inside the screen area */
