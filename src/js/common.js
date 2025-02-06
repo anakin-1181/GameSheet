@@ -2,18 +2,9 @@ import SheetsAPI from './sheets.js';
 
 const sheets = new SheetsAPI();
 
-async function sortedData(){
+export async function fData(range) {
     try {
-        const data = await fData();
-        return data.sort((a, b) => Number(b[1]) - Number(a[1]))
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-async function fData() {
-    try {
-        let data = await sheets.readSheet();
+        let data = await sheets.readSheet(range);
         data.forEach((arr)=>{
             if (arr[1] === "Score"){
             }
@@ -28,10 +19,9 @@ async function fData() {
     }
 }
 
-async function create_table(){
+export async function create_table(data){
     try{
         await sheets.initialize();
-        const data = await fData();
 
         const table = document.getElementById("t1")
         if (!table){
@@ -55,7 +45,7 @@ async function create_table(){
 
 }
 
-async function waitForGapi(retries = 5) {
+export async function waitForGapi(retries = 5) {
     while (typeof gapi === "undefined" && retries > 0) {
         alert(`${retries} tries left`)
         await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
@@ -69,12 +59,4 @@ async function waitForGapi(retries = 5) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        await waitForGapi();
-        await create_table();
 
-    } catch (error) {
-        console.log(error);
-    }
-});
