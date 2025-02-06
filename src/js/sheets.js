@@ -59,5 +59,7 @@ window.addEventListener('error', function(e) {
         time: new Date().toISOString()
     });
 });
+
+
 export default SheetsAPI;
 
