@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <script src="https://apis.google.com/js/api.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home.css">
     <title>Document</title>
 
 </head>
 
 <body>
 
-<div class="table-container">
-    <h1> Leaderboard</h1>
-    <p> Amazing Raise 25</p>
-    <table style="margin: auto" id="t1"></table>
-    <button style="margin: auto" id="sort"> Sort By Score </button>
+<div class="gameboy-container">
+    <div class="gameboy-screen">
+        <div class="content">
+            <h1>Leaderboard</h1>
+            <p>Amazing Raise 25</p>
+            <table id="t1" class="arcade-table"></table>
+
+
+        </div>
+    </div>
+    <button id="sort" >Sort By Score</button>
+
+
 
     <nav class="bottom-nav">
-        <a href="../../index.html" id="nav-home">Home</a>
-        <a href="./leaderboard.html" id="nav-leaderboard">Leaderboard</a>
-        <a href="./room.html" id="nav-map">Room</a>
-        <a href="./time.html" id="nav-time">Time</a>
+        <a href="../../index.html" id="nav-home">
+            <img src="../../Home%20Icon.png" alt="home_icon">
+        </a>
+        <a href="./leaderboard.html" id="nav-leaderboard">
+            <img src="../../Crown%20Icon.png" alt="crown_icon">
+        </a>
+        <a href="./room.html" id="nav-map">
+            <img src="../../Placeholder%20Icon.png" alt="map_icon">
+        </a>
+        <a href="./time.html" id="nav-time">
+            <img src="../../Clock%20icon.png" alt="time_icon">
+        </a>
     </nav>
 
 </div>
+
 <script type="module" src="../js/leaderboard.js"> </script>
 </body>
 </html>
