@@ -60,7 +60,7 @@ export async function create_table(data){
 
 }
 
-export async function waitForGapi(retries = 5) {
+export async function waitForGapi(retries = 15) {
     while (typeof gapi === "undefined" && retries > 0) {
         await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
         retries--; // Decrease retry count
