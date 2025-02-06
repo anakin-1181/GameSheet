@@ -31,19 +31,20 @@ body {
     margin: 0;
     padding: 0;
     /* We'll leave the body background a neutral gray so the Game Boy shell stands out */
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     font-family: 'Press Start 2P', monospace; /* Retro font, remove if desired */
 }
 
 /* ---------- GAME BOY CONTAINER ---------- */
 .gameboy-container {
     /* Center it on the page and give it a console-like size */
-    margin: 40px auto;
+    margin: 0 auto;
+    margin-top: calc(50vh - 370px);
     max-width: 400px;
     height: 700px;
 
     background-color: #d3d3d3; /* Grayish "shell" color */
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
     position: relative;
@@ -52,9 +53,10 @@ body {
 
 /* The "screen" portion */
 .gameboy-screen {
-    width: 80%;
-    height: 60%;
-    margin: 20px auto 0 auto;
+    width: 90%;
+    height: 50%;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #000; /* black "arcade" style screen */
     border: 8px solid #555;
     border-radius: 10px;
@@ -72,16 +74,16 @@ body {
 /* ---------- BOTTOM NAV (GAME BOY "BUTTONS") ---------- */
 .bottom-nav {
     position: absolute;
-    bottom: 20px;
+    bottom: 70px;
     /* Center the grid horizontally */
-    left: 50%;
+    left: 75%;
     transform: translateX(-50%);
 
     /* Define the grid: 2 columns, 2 rows */
     display: grid;
     grid-template-columns: 80px 80px; /* Adjust to your button size */
     grid-template-rows: 80px 80px;
-    gap: 16px; /* Space between buttons */
+    gap: 7px; /* Space between buttons */
 }
 
 /* Keep the same button styling as before, just remove or reduce the width/height
@@ -122,12 +124,15 @@ body {
 /* ---------- ARCADE TABLE STYLING ---------- */
 .arcade-table {
     /* Collapsed borders, centered in the .content */
+    text-align: center;
     border-collapse: collapse;
     margin: 0 auto;
+    height: 90%;
+    width: 100%;
 }
 
 /* Table heading cells */
-.arcade-table thead th {
+.arcade-table th {
     font-size: 14px;
     text-transform: uppercase;
     padding: 8px 16px;
@@ -136,22 +141,52 @@ body {
 }
 
 /* Table body cells */
-.arcade-table tbody td {
+.arcade-table td {
+    text-align: center;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 18px;
     color: #ffffff;
+    margin-bottom: auto;
+}
+
+.room-table {
+    /* Collapsed borders, centered in the .content */
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto;
+    height: 90%;
+    width: 100%;
+}
+
+/* Table heading cells */
+.room-table th {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+/* Table body cells */
+.room-table td {
+    text-align: left;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    vertical-align: top;
 }
 
 #sort {
     position: absolute;
-    top: 65%;       /* Adjust to place it below the screen but above nav */
-    left: 27%;
+    top: 60%;       /* Adjust to place it below the screen but above nav */
+    left: 23%;
     transform: translateX(-50%);
     /* Style as needed */
     width: 120px;
     height: 20px;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: auto;
 }
 
 #HomeScreen {
@@ -159,8 +194,26 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-     /* optional center alignment */
+}
 
+/*.gameboy-header{*/
+/*    width: 90%;*/
+/*    height: 10%;*/
+/*    background-color: #ff0000; !* black "arcade" style screen *!*/
+/*    border: 1px solid #555;*/
+/*    position: relative;*/
+/*    overflow: auto;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+
+/*}*/
+
+#header {
+    font-size: 1.9rem;
+    max-width: 360px;
+    text-align: center;
+    width: 90%;
+    margin: 20px auto 10px;
 }
 
 /* You can add color classes or alignment as needed:

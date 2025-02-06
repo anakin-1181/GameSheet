@@ -39,7 +39,7 @@ export async function getData(range) {
             let data = await getData(range);
             console.log("formatted data: ", data)
             data.forEach((arr) => {
-                if (arr[1] === "Score") {
+                if (arr[1] === "SCORE") {
                 } else {
                     arr[1] = Math.ceil(arr[1])
                 }
@@ -59,17 +59,31 @@ export async function getData(range) {
             }
 
             table.innerHTML = "";
+            let isFirst = true
 
             data.forEach(row => {
+                if (isFirst){
+                    const headerRow = document.createElement("tr");
+                    row.forEach(cell=>{
+                        const th = document.createElement("th");
+                        th.textContent = cell;
+                        headerRow.appendChild(th)
+
+                    })
+                    table.appendChild(headerRow);
+                    isFirst = !isFirst;
+                }
                 // Each row
-                const tr = document.createElement("tr");
-                row.forEach(cell => {
-                    // Each cell
-                    const td = document.createElement("td");
-                    td.textContent = cell;
-                    tr.appendChild(td);
-                })
-                table.appendChild(tr)
+                else {
+                    const tr = document.createElement("tr");
+                    row.forEach(cell => {
+                        // Each cell
+                        const td = document.createElement("td");
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    })
+                    table.appendChild(tr)
+                }
             });
             console.log("table created")
 
