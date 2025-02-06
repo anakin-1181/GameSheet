@@ -46,6 +46,7 @@ class SheetsAPI {
 
             return response.result.values;
         } catch (error) {
+            console.error(`range: ${range}`)
             console.error('Error reading spreadsheet:', error);
             throw error;
         }
