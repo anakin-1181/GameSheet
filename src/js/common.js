@@ -2,6 +2,21 @@ import SheetsAPI from './sheets.js';
 
 const sheets = new SheetsAPI();
 
+export const range = {
+    time: "Time!A1:B9",
+    room: "Room!A1:B12",
+    leaderboard: "Ranking!A1:B11"
+}
+
+export async function getData(range){
+    try{
+        return await sheets.readSheet(range);
+    }
+    catch (e){
+        console.error(e);
+    }
+}
+
 export async function fData(range) {
     try {
         let data = await sheets.readSheet(range);
