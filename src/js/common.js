@@ -1,14 +1,16 @@
 import SheetsAPI from './sheets.js';
 
-try {
-    await waitForGapi()
-    const sheets = new SheetsAPI();
-    await sheets.initialize();
+async function getSheet() {
+    try {
+        await waitForGapi()
+        const sheets = new SheetsAPI();
+        await sheets.initialize();
+        return sheets
+    }
+    catch (e){
+        console.error("DOM", e)
+    }
 }
-catch (e){
-    console.error("DOM", e)
-}
-
 
 export const range = {
     time: "Time!A1:B9",
@@ -24,7 +26,7 @@ export const gdata = {
 
 export async function getData(range){
     try{
-        let data = await sheets.readSheet(range);
+        let data = (await getSheet()).readSheet(range);
         return data
     }
     catch (e){
@@ -34,7 +36,7 @@ export async function getData(range){
 
 export async function fData(range) {
     try {
-        let data = await sheets.readSheet(range);
+        let data = (await getSheet()).readSheet(range);
         data.forEach((arr)=>{
             if (arr[1] === "Score"){
             }
