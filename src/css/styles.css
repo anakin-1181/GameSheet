@@ -70,6 +70,25 @@ body {
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1) ;
 }
 
+.bottom-nav a {
+    display: flex;            /* Use flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+    width: 60px;              /* Square dimensions for the button */
+    height: 60px;
+    background-color: #8f648f; /* Or any color you want */
+    border: 2px solid #555;
+    border-radius: 10px;
+    text-decoration: none;
+    overflow: hidden;         /* Hide any overflow if image is bigger */
+}
+
+.bottom-nav a img {
+    max-width: 90%;     /* or 100%, adjust to taste */
+    max-height: 90%;    /* keep a bit of padding so it doesn’t touch edges */
+    object-fit: contain;
+}
+
 
 table {
     margin-bottom: 5em;
