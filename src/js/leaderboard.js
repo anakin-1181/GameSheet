@@ -1,5 +1,5 @@
 import SheetsAPI from './sheets.js';
-import {waitForGapi, create_table, fData} from './common.js';
+import {waitForGapi, create_table, fData, range} from './common.js';
 
 const sheets = new SheetsAPI;
 
@@ -15,7 +15,7 @@ async function sortedData(){
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const data = await fData("Ranking!A1:B10");
+        const data = await fData(range.leaderboard);
         await waitForGapi();
         await create_table(data);
 

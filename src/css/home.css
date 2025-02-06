@@ -1,0 +1,30 @@
+.bottom-nav {
+    text-align: center;
+    bottom: 20px;
+    margin-top: 5em;
+    position: fixed;   /* pin to a fixed spot */
+    left: 0;           /* attach it to the left edge */
+    width: 100%;       /* span entire width */
+    background-color: #fff; /* for contrast, if desired */
+    padding: 1em;           /* add some spacing */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) ;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;  /* ensures images don't have extra whitespace under them */
+}
