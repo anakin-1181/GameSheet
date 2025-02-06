@@ -1,9 +1,10 @@
 import SheetsAPI from './sheets.js';
 
+const sheets = new SheetsAPI();
+
 async function getSheet() {
     try {
-        await waitForGapi()
-        const sheets = new SheetsAPI();
+        await waitForGapi();
         await sheets.initialize();
         return sheets
     }
@@ -24,73 +25,72 @@ export const gdata = {
     leaderboard: await fData((range.leaderboard))
 };
 
-export async function getData(range){
-    try{
-        let data = (await getSheet()).readSheet(range);
-        return data
-    }
-    catch (e){
+export async function getData(range) {
+    try {
+        return sheets.readSheet(range);
+    } catch (e) {
         console.error(e);
     }
-}
-
-export async function fData(range) {
-    try {
-        let data = (await getSheet()).readSheet(range);
-        data.forEach((arr)=>{
-            if (arr[1] === "Score"){
-            }
-            else {
-                arr[1] = Math.ceil(arr[1])
-            }
-        })
-        return data
     }
-    catch (e){
-        console.log(e)
-    }
-}
 
-export async function create_table(data){
-    try{
 
-        const table = document.getElementById("t1")
-        if (!table){
-            throw new Error("Table element not found");
-        }
-        data.forEach(row => {
-            // Each row
-            const tr = document.createElement("tr");
-            row.forEach(cell => {
-                // Each cell
-                const td = document.createElement("td");
-                td.textContent = cell;
-                tr.appendChild(td);
+    export async function fData(range) {
+        try {
+            let data = await getData(range);
+            console.log("formatted data: ", data)
+            data.forEach((arr) => {
+                if (arr[1] === "Score") {
+                } else {
+                    arr[1] = Math.ceil(arr[1])
+                }
             })
-            table.appendChild(tr)
-        });
-        console.log("table created")
-
-
-    } catch (error) {
-        console.error("error", error);
+            return data
+        } catch (e) {
+            console.log(e)
+        }
     }
 
-}
+    export async function create_table(data) {
+        try {
 
-export async function waitForGapi(retries = 15) {
-    while (typeof gapi === "undefined" && retries > 0) {
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
-        console.log(`${retries} tries left`)
-        alert(`${retries} tries left`)
-        retries--; // Decrease retry count
+            const table = document.getElementById("t1")
+            if (!table) {
+                throw new Error("Table element not found");
+            }
+            data.forEach(row => {
+                // Each row
+                const tr = document.createElement("tr");
+                row.forEach(cell => {
+                    // Each cell
+                    const td = document.createElement("td");
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                })
+                table.appendChild(tr)
+            });
+            console.log("table created")
+
+
+        } catch (error) {
+            console.error("error", error);
+        }
+
     }
 
-    if (typeof gapi === "undefined") {
-        alert("gapi is not loaded");
-    } else {
-        alert("gapi loaded successfully");
+    export async function waitForGapi(retries = 15) {
+        while (typeof gapi === "undefined" && retries > 0) {
+            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
+            console.log(`${retries} tries left`)
+            alert(`${retries} tries left`)
+            retries--; // Decrease retry count
+        }
+
+        if (typeof gapi === "undefined") {
+            alert("gapi is not loaded");
+        } else {
+            alert("gapi loaded successfully");
+        }
     }
-}
+
 
 

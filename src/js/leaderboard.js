@@ -27,7 +27,7 @@ async function main(){
     try {
         console.log("hi")
         let data = gdata.leaderboard;
-        console.log(data)
+        console.log("final lederboard",data)
         await create_table(data);
 
     } catch (error) {
