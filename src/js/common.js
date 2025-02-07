@@ -52,12 +52,14 @@ export async function getData(range) {
 
     export function create_table(data) {
         try {
+            let table = document.getElementById("t1");
+            let loading = document.getElementById("loading");
 
-            let table = document.getElementById("t1")
             if (!table) {
                 throw new Error("Table element not found");
             }
 
+            loading.style.display = "block";
             table.innerHTML = "";
             let isFirst = true
 
@@ -91,7 +93,11 @@ export async function getData(range) {
         } catch (error) {
             console.error("error", error);
         }
+        finally {
+    // Hide loading once the table is creat
 
+        document.getElementById("loading").style.display = "none";
+}
     }
 
     export async function waitForGapi(retries = 15) {

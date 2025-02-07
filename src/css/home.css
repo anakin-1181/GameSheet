@@ -47,7 +47,7 @@ body {
     background-size: cover; /* Ensure it covers the full container */
 
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
     border: 2px solid #a17d56;
 
     position: relative;
@@ -217,7 +217,7 @@ body {
     /* Style as needed */
     width: 120px;
     height: 22px;
-    line-height: 0px;
+    line-height: 0;
 
     border-radius: 10px;
     cursor: pointer;
@@ -247,6 +247,12 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
+    animation: fade 4s;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .gameboy-header {
@@ -271,6 +277,20 @@ body {
     margin: 20px auto 10px;
 }
 
+.loading {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 100px 100px 0;
+    color: #ffffff;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
 /* You can add color classes or alignment as needed:
    e.g. .red-text { color: #ff0000; } etc.
    or text-align: right for scores. */
