@@ -13,9 +13,7 @@ console.log("before DOM listener: ",gdata.leaderboard)
 
 async function main(){
     try {
-        console.log("hi")
         let data = gdata.leaderboard;
-        console.log("final lederboard",data)
         await create_table(data);
 
     } catch (error) {
