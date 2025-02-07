@@ -43,9 +43,12 @@ body {
     max-width: 400px;
     height: 700px;
 
-    background-color: #d3d3d3; /* Grayish "shell" color */
+    background: url(./cardboardA.png) no-repeat center center;
+    background-size: cover; /* Ensure it covers the full container */
+
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border: 2px solid #a17d56;
 
     position: relative;
     overflow: hidden;
@@ -57,11 +60,13 @@ body {
     height: 50%;
     margin-right: auto;
     margin-left: auto;
-    background-color: #000; /* black "arcade" style screen */
-    border: 8px solid #555;
+    /*background-color: #271E1A;*/
+    background-color: #372B26;
+    /*border: 8px solid #555;*/
     border-radius: 10px;
     position: relative;
     overflow: auto;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 2);
 
 }
 
@@ -72,35 +77,62 @@ body {
     color: #fff; /* White text stands out on black screen */
 }
 
+#tapes {
+    position: absolute;
+    bottom: 80px;           /* 70px from the bottom */
+    left: 27%;              /* Position left edge at 75% of parent's width */
+    transform: translateX(-50%);  /* Center horizontally around the 75% mark */
+
+    /* Responsive sizing */
+    width: 35%;             /* 50% of the parent container's width */
+    height: auto;           /* Maintain aspect ratio */
+
+
+    /* Optional: Control how the image fits inside the container */
+    object-fit: cover;      /* Use 'cover' or 'contain' as needed */
+}
+
 /* ---------- BOTTOM NAV (GAME BOY "BUTTONS") ---------- */
 .bottom-nav {
     position: absolute;
-    bottom: 70px;
+    bottom: 64px;
     /* Center the grid horizontally */
-    left: 75%;
+    left: 73%;
     transform: translateX(-50%);
+    /*background-color: #2222c1;*/
+    /*background: url("cardboard_button.png");*/
+    /*background-size: cover;*/
+
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
 
     /* Define the grid: 2 columns, 2 rows */
     display: grid;
     grid-template-columns: 80px 80px; /* Adjust to your button size */
     grid-template-rows: 80px 80px;
     gap: 7px; /* Space between buttons */
+
+    width: max-content; /* Adjust width based on content */
 }
 
 /* Keep the same button styling as before, just remove or reduce the width/height
    so they fit in your grid cells. */
 .bottom-nav a {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url("bb1.png");
+    background-size: cover;
 
-    background-color: #8f648f;
-    border: 2px solid #555;
-    border-radius: 10px;
+    /*background-color: #8f648f;*/
+
+    border-radius: 50%;
     text-decoration: none;
-    box-shadow: inset 0 2px 0 rgba(255,255,255,0.5);
+    box-shadow: inset -3px -4px 2px rgba(0, 0, 0, 0.2);
+
     /* etc. */
 }
 
@@ -114,13 +146,13 @@ body {
     display: block;
 }
 
-.bottom-nav a:hover {
-    background-color: #9e749e;
-}
-.bottom-nav a:active {
-    background-color: #7c527c;
-    box-shadow: none;
-}
+/*.bottom-nav a:hover {*/
+/*    background-color: #9e749e;*/
+/*}*/
+/*.bottom-nav a:active {*/
+/*    background-color: #7c527c;*/
+/*    box-shadow: none;*/
+/*}*/
 
 /* ---------- ARCADE TABLE STYLING ---------- */
 .arcade-table {
@@ -188,26 +220,38 @@ body {
     border-radius: 10px;
     cursor: pointer;
     margin-top: auto;
+
+    background: url("sortBackground.png");
+    background-size: cover;
+    background-position: 30% 60%;
+
+
+    box-shadow: inset -4px -6px 0px rgba(0, 0, 0, 0.1);
+
+
+
 }
 
 #HomeScreen {
-    margin-top: 30px;
+    margin-top: 72px;
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/*.gameboy-header{*/
-/*    width: 90%;*/
-/*    height: 10%;*/
-/*    background-color: #ff0000; !* black "arcade" style screen *!*/
-/*    border: 1px solid #555;*/
-/*    position: relative;*/
-/*    overflow: auto;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
+.gameboy-header {
+    width: 400px;   /* Example fixed width */
+    height: auto;  /* Example fixed height */
+    overflow: hidden; /* Ensures any overflow is hidden */
+}
 
-/*}*/
+.gameboy-header img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover; /* Use 'cover' to fill or 'contain' to fit without cropping */
+    display: block;
+    margin: 2px 32px 2px;
+}
 
 #header {
     font-size: 1.9rem;
