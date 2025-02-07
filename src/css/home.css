@@ -43,7 +43,7 @@ body {
     max-width: 400px;
     height: 700px;
 
-    background: url(./cardboardA.png) no-repeat center center;
+    background: url(../../background.png) no-repeat center center;
     background-size: cover; /* Ensure it covers the full container */
 
     border-radius: 10px;
@@ -247,11 +247,17 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    animation: fade 4s;
+    animation: fadeIn 3s;
 }
 
-@keyframes fade {
+@keyframes fadeIn {
     0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes flashes {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
     100% { opacity: 1; }
 }
 
