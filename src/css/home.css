@@ -47,7 +47,7 @@ body {
     background-size: cover; /* Ensure it covers the full container */
 
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border: 2px solid #a17d56;
 
     position: relative;
@@ -216,17 +216,27 @@ body {
     transform: translateX(-50%);
     /* Style as needed */
     width: 120px;
-    height: 20px;
+    height: 22px;
+    line-height: 0px;
+
     border-radius: 10px;
     cursor: pointer;
     margin-top: auto;
 
-    background: url("sortBackground.png");
-    background-size: cover;
-    background-position: 30% 60%;
+    /*background: url("sortBackground.png");*/
+    /*background-size: cover;*/
+    /*background-position: 30% 60%;*/
+
+    background-color: #a68151; /* Change background color */
+    color: #000000; /* Change text color */
+    border: none; /* Remove border */
+    padding: 8px 15px;
+    text-align: center;
+    /* Makes it rounded */
+    font-size: 13px;
 
 
-    box-shadow: inset -4px -6px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: inset -1px -3px 0px rgba(0, 0, 0, 0.15);
 
 
 
