@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: [ feat/clean ]
+    branches: [ feat/website ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,16 +9,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Generate config
-        run: |
-          echo "export const config = { 
-            API_KEY: '${{ secrets.API_KEY }}',
-            SHEET_ID: '${{ secrets.SHEET_ID }}'
-          };" > src/js/config2.js
-          echo "js dir:"
-          ls src/js
-          echo "file content:"
-          cat src/js/config2.js
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
