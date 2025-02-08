@@ -1,4 +1,4 @@
-import {config} from "./config2.js";
+import {config} from "./config.js";
 
 // Configuration for Google Sheets API
 const API_KEY = config.API_KEY;
