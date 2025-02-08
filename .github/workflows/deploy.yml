@@ -1,7 +1,7 @@
 name: Deploy
 on:
   push:
-    branches: [ feat/website ]
+    branches: [ feat/clean ]
 jobs:
   build:
     runs-on: ubuntu-latest
