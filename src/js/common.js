@@ -39,7 +39,7 @@ export async function getData(range) {
             let data = await getData(range);
             console.log("formatted data: ", data)
             data.forEach((arr) => {
-                if (arr[1] === "SCORE") {
+                if (isNaN(Number(arr[1]))) {
                 } else {
                     arr[1] = Math.ceil(arr[1])
                 }
