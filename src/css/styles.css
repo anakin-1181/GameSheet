@@ -1,123 +1,234 @@
-@media screen and (max-width: 375px) {
-    body {
-        padding: 10px;
-        height: auto;
-    }
 
-    .table-container {
-        width: 95%;
-    }
-
-    table {
-        width: 100%;
-        font-size: 14px;
-        min-width: 300px;
-    }
-
-    th, td {
-        padding: 8px 5px;
-        font-size: 14px;
-        white-space: nowrap;
-    }
+* {
+    box-sizing: border-box;
 }
-
-@media screen and (max-width: 480px) {
-    th, td {
-        padding: 6px 3px;
-        font-size: 12px;
-    }
-}
-
-p {
-    text-align: center;
-}
-
-
-h1 {
-    position: relative;
-    top: -10px; /* Moves it slightly upwards */
-    text-align: center;
-}
-
-
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
+    margin: 0;
+    padding: 0;
+    /* We'll leave the body background a neutral gray so the Game Boy shell stands out */
+    background-color: #ffffff;
+    font-family: 'Press Start 2P', monospace; /* Retro font, remove if desired */
 }
 
-.table-container {
-    width: 90%;
-    margin: auto;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
+/* GAMEBOY CONTAINER */
 
-.bottom-nav {
-    text-align: center;
-    bottom: 20px;
-    margin-top: 5em;
-    position: fixed;   /* pin to a fixed spot */
-    left: 0;           /* attach it to the left edge */
-    width: 100%;       /* span entire width */
-    background-color: #fff; /* for contrast, if desired */
-    padding: 1em;           /* add some spacing */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) ;
-}
+.gameboy-container {
 
-.bottom-nav a {
-    display: flex;            /* Use flexbox to center the image */
-    justify-content: center;
-    align-items: center;
-    width: 60px;              /* Square dimensions for the button */
-    height: 60px;
-    background-color: #8f648f; /* Or any color you want */
-    border: 2px solid #555;
+    margin-top: calc(50vh - 370px);
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 400px;
+    height: 700px;
+
+    background: url(../../images/background3.png) no-repeat center center;
+    background-size: cover; /* Ensure it covers the full container */
+
     border-radius: 10px;
-    text-decoration: none;
-    overflow: hidden;         /* Hide any overflow if image is bigger */
-}
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
+    border: 2px solid #a17d56;
 
-.bottom-nav a img {
-    max-width: 90%;     /* or 100%, adjust to taste */
-    max-height: 90%;    /* keep a bit of padding so it doesn’t touch edges */
-    object-fit: contain;
-}
-
-
-table {
-    margin-bottom: 5em;
-    width: 100%; /* Make table responsive */
-    max-width: 800px; /* Limit max width on larger screens */
-    min-width: 300px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    border-collapse: separate;
-    border-radius: 10px;
+    position: relative;
     overflow: hidden;
 }
 
-thead {
-    background-color: #6c63ff;
-    color: white;
+.gameboy-screen {
+    width: 90%;
+    height: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #372B26;
+    border-radius: 10px;
+    position: relative;
+    overflow: auto;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 2);
+}
+
+.content {
+    padding: 10px 15px;
+    text-align: center;
+    color: #fff;
+}
+
+#tapes {
+    position: absolute;
+    bottom: 80px;
+    left: 27%;
+    transform: translateX(-50%);
+
+    width: 35%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+/*BUTTONS*/
+.bottom-nav {
+    position: absolute;
+    bottom: 64px;
+
+    left: 73%;
+    transform: translateX(-50%);
+
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 80px 80px;
+    grid-template-rows: 80px 80px;
+    gap: 7px;
+
+    width: max-content;
+}
+
+.bottom-nav a {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../../images/bb1.png");
+    background-size: cover;
+
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: inset -3px -4px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+/*BUTTON ICON*/
+.bottom-nav a img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ---------- ARCADE TABLE STYLING ---------- */
+.arcade-table {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto;
+    height: 90%;
+    width: 100%;
+}
+
+.arcade-table th {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.arcade-table td {
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: auto;
+}
+
+.room-table {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto;
+    height: 90%;
+    width: 100%;
+}
+
+.room-table th {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.room-table td {
     text-align: left;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    vertical-align: top;
 }
 
-th, td {
-    padding: 10px 10px;
-    border: 1px solid #000000;
-    /*background-color: #eddddd;*/
+#sort {
+    position: absolute;
+    top: 60%;       /* Adjust to place it below the screen but above nav */
+    left: 23%;
+    transform: translateX(-50%);
+    /* Style as needed */
+    width: 120px;
+    height: 22px;
+    line-height: 0;
+
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto;
+
+
+    background-color: #a68151;
+    color: #000000;
+    border: none;
+    padding: 8px 15px;
+    text-align: center;
+    font-size: 13px;
+
+    box-shadow: inset -1px -3px 0 rgba(0, 0, 0, 0.15);
 }
 
-tr:nth-child(odd) {
-    background-color: #eddddd;
+/*MAIN SCREEN TITLE IMAGE */
+#HomeScreen {
+    margin-top: 72px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    animation: fadeIn 3s;
 }
 
-tbody tr:hover {
-    background-color: #2222c1;
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/*CONTAINER HEADER*/
+.gameboy-header {
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+}
+
+.gameboy-header img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 2px 32px 2px;
+}
+
+#header {
+    font-size: 1.9rem;
+    max-width: 360px;
+    text-align: center;
+    width: 90%;
+    margin: 20px auto 10px;
+}
+
+/*LOADING ANIMATION*/
+.loading {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 100px 100px 0;
+    color: #ffffff;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
 

@@ -1,25 +1,13 @@
-import SheetsAPI from './sheets.js';
-import {waitForGapi, create_table, getData, gdata} from './common.js';
-
-// document.addEventListener('DOMContentLoaded', async () => {
-//     try {
-//         const data = gdata.room;
-//         await waitForGapi();
-//         await create_table(data);
-//
-//     } catch (error) {
-//         console.log(error);
-//     }
-// });
+import {create_table, gdata} from './common.js';
 
 async function main() {
     try {
-        const data = gdata.room;
-        await create_table(data);
-
+        const data = await gdata.room;
+        create_table(data);
     } catch (error) {
         console.log(error);
     }
 }
 
+// Run main() when page is loaded
 await main()
