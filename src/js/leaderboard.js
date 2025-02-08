@@ -1,54 +1,38 @@
 import {create_table, gdata} from './common.js';
 
-function sortedData(){
-    try {
-        const data = gdata.leaderboard;
-        // let sorted_data = data.sort((a, b) => Number(b[1]) - Number(a[1]))
-        return data.toSorted((a, b) => Number(b[1]) - Number(a[1]))
-    } catch (error) {
-        console.error('Error:', error);
+// Get sorted by score / sorted by group data
+async function getLeaderboard(isSorted = false) {
+    try{
+        const data = await gdata.leaderboard;
+        return isSorted ? data.toSorted((a, b)=> Number(b[1])-Number(a[1])) : data;
+    }catch (e){
+        console.error(e)
     }
 }
-console.log("before DOM listener: ",gdata.leaderboard)
 
 async function main(){
     try {
-        let data = gdata.leaderboard;
-        await create_table(data);
-
-    } catch (error) {
-
+        const data = await getLeaderboard()
+        create_table(data);
+    } catch (e) {
+        console.log(e)
     }
-    console.log("leaderboard sth")
 }
 
-let sortButton = document.getElementById("sort")
-let isSorted = false;
+// Sort button event handler
+const sortButton = document.getElementById("sort")
+let isSorted = true;
 
 sortButton.addEventListener('click', async()=>{
     try{
-        if (isSorted){
-            let data = gdata.leaderboard;
-            console.log(data)
-            await create_table(data);
-            sortButton.textContent = "Sort By Score";
-            isSorted = !isSorted;
-            console.log("current: ", isSorted)
-        }
-        else if (!isSorted){
-            let sorted_data = sortedData();
-            console.log(sorted_data)
-            await create_table(sorted_data);
-            sortButton.textContent = "Sort By Group";
-            isSorted = !isSorted;
-            console.log("current: ", isSorted)
-        }
+        let data = await getLeaderboard(isSorted);
+        create_table(data);
+        isSorted = !isSorted;
     }
     catch (e){
         console.error(e)
     }
 })
 
-
-
+// Run main() when page is loaded
 await main()

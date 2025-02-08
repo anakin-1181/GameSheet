@@ -1,29 +1,13 @@
-import {waitForGapi, create_table, fData, gdata} from './common.js';
-
-
-// document.addEventListener('DOMContentLoaded', async () => {
-//     try {
-//         const data = gdata.time;
-//         await waitForGapi();
-//         await create_table(data);
-//
-//     } catch (error) {
-//         console.log(error);
-//     }
-// });
-
-
-//     }
-// });
+import {create_table, gdata} from './common.js';
 
 async function main() {
     try {
         const data = gdata.time;
         await create_table(data);
-
-    } catch (error) {
-        console.log(error);
+    } catch (e) {
+        console.log(e);
     }
 }
 
+// Run main() when page is loaded
 await main()

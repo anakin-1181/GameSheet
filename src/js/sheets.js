@@ -1,4 +1,4 @@
-import {config} from "./config2.js";
+import {config} from "./config.js";
 
 // Configuration for Google Sheets API
 const API_KEY = config.API_KEY;
@@ -52,14 +52,7 @@ class SheetsAPI {
         }
     }
 }
-window.addEventListener('error', function(e) {
-    console.log('sheets Resource failed to load:', {
-        src: e.target.src,
-        type: e.target.tagName,
-        time: new Date().toISOString()
-    });
-});
 
-
-export default SheetsAPI;
+// Export SheetsAPI object to common.js to get data by getData()
+export const sheets = new SheetsAPI();
 

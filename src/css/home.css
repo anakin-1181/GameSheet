@@ -1,27 +1,3 @@
-/*.bottom-nav {*/
-/*    text-align: center;*/
-/*    bottom: 20px;*/
-/*    margin-top: 5em;*/
-/*    position: fixed;   !* pin to a fixed spot *!*/
-/*    left: 0;           !* attach it to the left edge *!*/
-/*    width: 100%;       !* span entire width *!*/
-/*    background-color: #fff; !* for contrast, if desired *!*/
-/*    padding: 1em;           !* add some spacing *!*/
-/*    box-shadow: 0 -2px 5px rgba(0,0,0,0.1) ;*/
-/*}*/
-
-/*body {*/
-/*    font-family: Arial, sans-serif;*/
-/*    background-color: #f8f9fa;*/
-/*}*/
-
-/*h1 {*/
-/*    text-align: center;*/
-/*}*/
-
-/*p {*/
-/*    text-align: center;*/
-/*}*/
 
 /* ---------- RESET / BASE STYLING ---------- */
 * {
@@ -43,7 +19,7 @@ body {
     max-width: 400px;
     height: 700px;
 
-    background: url(../../background3.png) no-repeat center center;
+    background: url(../../images/background3.png) no-repeat center center;
     background-size: cover; /* Ensure it covers the full container */
 
     border-radius: 10px;
@@ -99,9 +75,6 @@ body {
     /* Center the grid horizontally */
     left: 73%;
     transform: translateX(-50%);
-    /*background-color: #2222c1;*/
-    /*background: url("cardboard_button.png");*/
-    /*background-size: cover;*/
 
     align-items: center;
     justify-items: center;
@@ -124,7 +97,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("bb1.png");
+    background: url("../../images/bb1.png");
     background-size: cover;
 
     /*background-color: #8f648f;*/
@@ -223,9 +196,6 @@ body {
     cursor: pointer;
     margin-top: auto;
 
-    /*background: url("sortBackground.png");*/
-    /*background-size: cover;*/
-    /*background-position: 30% 60%;*/
 
     background-color: #a68151; /* Change background color */
     color: #000000; /* Change text color */
