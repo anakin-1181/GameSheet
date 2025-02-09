@@ -4,9 +4,7 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error('Network response error');
         }
-        const data = await response.json();
-        console.log('Received data:', data);
-        return data;
+        return await response.json();
     } catch (error) {
         console.error('Error fetching data:', error);
     }
