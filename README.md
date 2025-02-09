@@ -36,3 +36,7 @@ A retro Game-Boy styled web interface that displays data from a Google Sheets ba
 2. The server endpoint will automatically use these environment variables to provide the configuration to the frontend securely.
 
 3. Host the files on a web server or use a local development
+
+## Credit
+Design: Zoe Ma @UCLPASS
+Drawings: Alyssa Wong @UCLPASS, Arielle Kwok @UCLPASS
