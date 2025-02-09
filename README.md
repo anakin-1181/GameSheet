@@ -2,6 +2,9 @@
 
 A retro Game-Boy styled web interface that displays data from a Google Sheets backend.
 
+## Preview
+![image](https://github.com/user-attachments/assets/d474407e-7180-4168-bc4c-48b3bf026f06)
+
 ## Features
 
 - 🎮 Retro Game Boy-inspired UI design
