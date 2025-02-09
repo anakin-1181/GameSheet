@@ -3,7 +3,8 @@
 A retro Game-Boy styled web interface that displays data from a Google Sheets backend.
 
 ## Preview
-![image](https://github.com/user-attachments/assets/d474407e-7180-4168-bc4c-48b3bf026f06)
+![image](https://github.com/user-attachments/assets/a52e6b1c-57c6-43ad-a825-58353b274330)
+![image](https://github.com/user-attachments/assets/eb70ed95-4f3e-4fb7-8016-aed1cd14016a)
 
 ## Features
 
