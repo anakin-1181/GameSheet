@@ -26,6 +26,8 @@ class SheetsAPI {
                 discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
             });
 
+            console.log("From sheet.js, API_KEY: ", API_KEY, "SHEET_ID: ", SHEET_ID)
+
             this.isInitialized = true;
         } catch (error) {
             console.error('Error initializing Google Sheets API:', error);
