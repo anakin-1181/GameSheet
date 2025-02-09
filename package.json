@@ -58,14 +58,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anakin-1181/Score-Visualiser.git"
+    "url": "git+https://github.com/anakin-1181/GameSheet.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/anakin-1181/Score-Visualiser/issues"
+    "url": "https://github.com/anakin-1181/GameSheet/issues"
   },
-  "homepage": "https://github.com/anakin-1181/Score-Visualiser#readme"
+  "homepage": "https://github.com/anakin-1181/GameSheet#readme"
 }
