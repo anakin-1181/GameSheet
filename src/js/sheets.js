@@ -9,6 +9,7 @@ const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
 class SheetsAPI {
     constructor() {
         this.isInitialized = false;
+        this.initPromise = this.initialize();
     }
 
     async initialize() {
