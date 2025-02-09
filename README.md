@@ -37,6 +37,6 @@ A retro Game-Boy styled web interface that displays data from a Google Sheets ba
 
 3. Host the files on a web server or use a local development
 
-## Credit
-Design: Zoe Ma @UCLPASS
-Drawings: Alyssa Wong @UCLPASS, Arielle Kwok @UCLPASS
+## Design Credit
+- Design: Zoe Ma @UCLPASS 
+- Drawings: Alyssa Wong @UCLPASS, Arielle Kwok @UCLPASS
