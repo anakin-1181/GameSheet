@@ -7,7 +7,6 @@ function fetchData() {
             return response.json();
         })
         .then(config => {
-            console.log('Received data:', config);
             console.log("Data fetched")
             return config;
         })
