@@ -3,7 +3,7 @@ import {sheets} from './sheets.js';
 // Google sheet range for data
 const range = {
     time: "Time!A1:B9",
-    room: "Room!A1:B12",
+    room: "Room!A1:C12",
     leaderboard: "Ranking!A1:B11"
 };
 
