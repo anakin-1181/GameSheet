@@ -1,12 +1,6 @@
-# GameSheet
+# Amazing Raise 2025 Game Boy Interface
 
-A retro Game-Boy styled web interface that displays data from a Google Sheets backend.
-
-## Preview
-|                                               |                                               |
-| --------------------------------------------- | --------------------------------------------- |
-| ![GameBoy Interface 1](https://github.com/user-attachments/assets/a52e6b1c-57c6-43ad-a825-58353b274330) | ![GameBoy Interface 2](https://github.com/user-attachments/assets/eb70ed95-4f3e-4fb7-8016-aed1cd14016a) |
-
+A retro Game Boy-styled web interface that displays leaderboard, room information, and timing data from a Google Sheets backend.
 
 ## Features
 
@@ -39,7 +33,3 @@ A retro Game-Boy styled web interface that displays data from a Google Sheets ba
 2. The server endpoint will automatically use these environment variables to provide the configuration to the frontend securely.
 
 3. Host the files on a web server or use a local development
-
-## Design Credit
-- Design: Zoe Ma @UCLPASS 
-- Drawings: Alyssa Wong @UCLPASS, Arielle Kwok @UCLPASS
