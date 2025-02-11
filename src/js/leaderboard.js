@@ -27,6 +27,11 @@ sortButton.addEventListener('click', async()=>{
     try{
         let data = await getLeaderboard(isSorted);
         create_table(data);
+        if (isSorted){
+            sortButton.textContent = "Sort by Group";
+        } else {
+            sortButton.textContent = "Sort by Score";
+        }
         isSorted = !isSorted;
     }
     catch (e){
