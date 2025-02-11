@@ -154,6 +154,14 @@ body {
     vertical-align: top;
 }
 
+.first-column {
+    text-align: left !important;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    vertical-align: top;
+}
+
 #sort {
     position: absolute;
     top: 60%;       /* Adjust to place it below the screen but above nav */
