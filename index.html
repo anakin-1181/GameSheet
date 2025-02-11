@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://apis.google.com/js/api.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amazing Raise 2025!</title>
     <link rel="stylesheet" href="src/css/styles.css">
@@ -10,12 +11,14 @@
 <div class="gameboy-container">
 
     <div class="gameboy-header">
-        <img src="images/header.png" alt="header">
+        <img src="images/header.png" alt="header" id="indexTitle">
 </div>
 
 <div class="gameboy-screen">
     <div class="content">
         <img src="images/mainScreen.png" alt="Homepage" id="HomeScreen" />
+        <div id="loading"></div> 
+        <table id="t1" class="arcade-table"></table>
     </div>
 </div>
 
@@ -39,6 +42,6 @@
 
 </div>
 
-
+<script src="./src/js/index.js" type="module"></script>
 </body>
 </html>

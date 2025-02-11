@@ -4,13 +4,15 @@ import {sheets} from './sheets.js';
 const range = {
     time: "Time!A1:B9",
     room: "Room!A1:C12",
-    leaderboard: "Ranking!A1:B11"
+    leaderboard: "Ranking!A1:B11",
+    credit: "Credit!A1:B3"
 };
 
 // Export data to use in different sheets
 export const gdata = {
     time: await getData(range.time),
     room: await getData(range.room),
+    credit: await getData(range.credit),
     leaderboard: await fData((range.leaderboard))
 };
 
@@ -57,6 +59,7 @@ export function create_table(data) {
 
         // Clear previous table content
         table.innerHTML = "";
+        console.log(data);
 
         data.forEach((row, rowIndex) => {
             // Each row
