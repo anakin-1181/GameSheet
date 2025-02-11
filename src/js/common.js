@@ -59,7 +59,8 @@ export function create_table(data) {
         table.innerHTML = "";
 
         // Specify table header
-        let isFirst = true
+        let isFirst = true;
+        let isFirstRow = true;
 
         data.forEach(row => {
             // Create header
@@ -76,12 +77,20 @@ export function create_table(data) {
             }
             // Each row
             else {
+
                 const tr = document.createElement("tr");
                 row.forEach(cell => {
                     // Each cell
-                    const td = document.createElement("td");
-                    td.textContent = cell;
-                    tr.appendChild(td);
+
+                    if (isFirstRow){
+                        const td = document.createElement("td1");
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    } else {
+                        const td = document.createElement("td");
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    }
                 })
                 table.appendChild(tr)
             }
