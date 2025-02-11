@@ -95,6 +95,8 @@ body {
     text-decoration: none;
     box-shadow: inset -3px -4px 2px rgba(0, 0, 0, 0.2);
 
+    -webkit-tap-highlight-color: transparent; 
+    touch-action: manipulation; 
 }
 
 .bottom-nav a:active {
@@ -191,6 +193,9 @@ body {
     font-family: 'Press Start 2P', monospace;
 
     box-shadow: inset -1px -3px 0 rgba(0, 0, 0, 0.15);
+
+    -webkit-tap-highlight-color: transparent; 
+    touch-action: manipulation; 
 }
 
 #sort:active {
