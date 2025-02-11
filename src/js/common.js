@@ -58,42 +58,22 @@ export function create_table(data) {
         // Clear previous table content
         table.innerHTML = "";
 
-        // Specify table header
-        let isFirst = true;
-        let isFirstRow = true;
-
-        data.forEach(row => {
-            // Create header
-            if (isFirst){
-                const headerRow = document.createElement("tr");
-                row.forEach(cell=>{
-                    const th = document.createElement("th");
-                    th.textContent = cell;
-                    headerRow.appendChild(th)
-
-                })
-                table.appendChild(headerRow);
-                isFirst = !isFirst;
-            }
+        data.forEach((row, rowIndex) => {
             // Each row
-            else {
-
                 const tr = document.createElement("tr");
-                row.forEach(cell => {
+                row.forEach((cell, cellIndex) => {
                     // Each cell
-
-                    if (isFirstRow){
-                        const td = document.createElement("td1");
-                        td.textContent = cell;
-                        tr.appendChild(td);
-                    } else {
-                        const td = document.createElement("td");
-                        td.textContent = cell;
-                        tr.appendChild(td);
+                    const element = document.createElement(rowIndex===0 ? "th" : "td");
+                    element.textContent = cell;
+                    
+                    if (cellIndex===0){
+                        element.classList.add("first-column");
                     }
+
+                    tr.appendChild(element);
                 })
                 table.appendChild(tr)
-            }
+            
         });
         console.log("table created")
 
