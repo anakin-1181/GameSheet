@@ -96,13 +96,22 @@ body {
     box-shadow: inset -3px -4px 2px rgba(0, 0, 0, 0.2);
 
     -webkit-tap-highlight-color: transparent; 
-    touch-action: manipulation; 
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .bottom-nav a:active {
   background-color: rgba(0, 0, 0, 0.2);
   /* box-shadow: 0 5px #666; */
   transform: translateY(1.5px);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .bottom-nav a:active {
+        transform: translateY(1.5px);
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 }
 
 /*BUTTON ICON*/
@@ -195,7 +204,9 @@ body {
     box-shadow: inset -1px -3px 0 rgba(0, 0, 0, 0.15);
 
     -webkit-tap-highlight-color: transparent; 
-    touch-action: manipulation; 
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 #sort:active {
@@ -203,6 +214,12 @@ body {
     box-shadow: 0 1px #a68151;
     
   }
+
+@media (hover: none) and (pointer: coarse) {
+    #sort:active {
+        box-shadow: 0 1px #a68151;
+    }
+}
 
 /*MAIN SCREEN TITLE IMAGE */
 #HomeScreen {
