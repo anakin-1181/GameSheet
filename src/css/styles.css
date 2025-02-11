@@ -99,20 +99,38 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
+
+    cursor: pointer;
+    touch-action: manipulation;
 }
 
 .bottom-nav a:active {
   background-color: rgba(0, 0, 0, 0.2);
-  /* box-shadow: 0 5px #666; */
   transform: translateY(1.5px);
+  -webkit-transform: translateY(1.5px);
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* @media (hover: none) and (pointer: coarse) {
     .bottom-nav a:active {
         transform: translateY(1.5px);
         background-color: rgba(0, 0, 0, 0.2);
     }
+} */
+
+@media (hover: none) {
+    .bottom-nav a {
+        /* Add hover state styles directly to the element for touch devices */
+        transition: transform 0.1s;
+        -webkit-transition: -webkit-transform 0.1s;
+    }
+    
+    .bottom-nav a:active {
+        transform: translateY(1.5px);
+        -webkit-transform: translateY(1.5px);
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 }
+
 
 /*BUTTON ICON*/
 .bottom-nav a img {
