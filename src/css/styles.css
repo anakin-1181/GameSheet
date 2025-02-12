@@ -98,6 +98,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 
     cursor: pointer;
     touch-action: manipulation;
@@ -223,6 +224,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #sort:active {
