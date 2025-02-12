@@ -1,4 +1,4 @@
-# Amazing Raise 2025 Game Boy Interface
+# GameSheet
 
 A retro Game Boy-styled web interface that displays leaderboard, room information, and timing data from a Google Sheets backend.
 
