@@ -30,6 +30,6 @@ A retro Game Boy-styled web interface that displays leaderboard, room informatio
 
    - Make sure to add `.env` to your `.gitignore` file
 
-2. The server endpoint will automatically use these environment variables to provide the configuration to the frontend securely.
+2. The server endpoint in api folder will automatically use these environment variables to provide the configuration to the frontend securely.
 
 3. Host the files on a web server or use a local development
