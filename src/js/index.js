@@ -1,30 +1,43 @@
 import {create_table, gdata} from './common.js';
 
-let showCredit = false;
+// html elements
+const htmlElement = {
+    homeLogo: document.getElementById("HomeScreen"),
+    creditHeader: document.getElementById("credit"),
+    contentDiv: document.querySelector(".content"),
+    table: document.getElementById("t1"),
+    indexTitle: document.getElementById("indexTitle")
+}
 
-// Show Credit
-document.getElementById("indexTitle").addEventListener('click', ()=>{
-    if (!showCredit){
-        document.getElementById("HomeScreen").style.display = "none";
+function showCreditPage() {
+    // Hide homepage logo
+    htmlElement.homeLogo.style.display = "none";
+    // Create and place credit header
+    htmlElement.creditHeader.style.display = "block";
+    htmlElement.creditHeader.textContent = "Credit";
+    // Create credit table
+    create_table(gdata.credit);
+    htmlElement.table.style.display = "block";
+}
 
-        const h1 = document.createElement("h1");
-        h1.textContent = "Credit";
+function hideCreditPage() {
+    // hide credit header and table
+    htmlElement.creditHeader.style.display = "none";
+    htmlElement.table.style.display = "none";
+    // Show homepage logo
+    htmlElement.homeLogo.style.display = "block";
+}
 
-        const contentDiv = document.querySelector('.content');
-        const table = document.getElementById('t1');
-        contentDiv.insertBefore(h1, table);
-
-        create_table(gdata.credit);
-        document.getElementById("t1").style.display = "block"
-        showCredit = true;
+function toggleCreditPage(){
+    // Check if the credit table is shown
+    const isShowingCredit = (htmlElement.homeLogo.style.display === "none");
+    // Handle table showing logic
+    if (isShowingCredit){
+        hideCreditPage();
+    } else {
+        showCreditPage();
     }
-    else if (showCredit){
-        const h1 = document.querySelector('.content h1');
-        if (h1) {h1.remove();}
+}
 
-        document.getElementById("t1").style.display = "none";
-        document.getElementById("HomeScreen").style.display = "block";
-        showCredit = false;
-    }
-})
-
+// Button click event listener
+htmlElement.indexTitle.addEventListener("click", toggleCreditPage);
