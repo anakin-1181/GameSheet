@@ -1,6 +1,12 @@
 # GameSheet
 
-A retro Game Boy-styled web interface that displays leaderboard, room information, and timing data from a Google Sheets backend.
+A Gameboy-styled web interface that displays live data from a Google Sheets backend, supported a fundrasising event with 100+ participants
+
+## Preview
+
+|                  Preview 1                  |                  Preview 2                  |
+| :-----------------------------------------: | :-----------------------------------------: |
+| ![GameSheet Preview 1](images/preview1.png) | ![GameSheet Preview 2](images/preview2.png) |
 
 ## Features
 
